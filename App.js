@@ -76,6 +76,7 @@ export default function App() {
                       secureTextEntry={true}
                     />
                   </View>
+                </KeyboardAvoidingView>
                   <TouchableOpacity 
                   onPress={onLogin}
                   activeOpacity={0.8} 
@@ -87,7 +88,6 @@ export default function App() {
                     Вже є акаунт? Увійти
                     </Text>
                   </View>
-                </KeyboardAvoidingView>
               </View>
             </ImageBackground>
           </View>
