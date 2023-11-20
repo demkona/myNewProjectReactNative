@@ -15,9 +15,9 @@ import {
 } from "react-native";
 
 export default function App() {
-  const [login, setLogin] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [login, setLogin] = useState("10");
+  const [email, setEmail] = useState("10");
+  const [password, setPassword] = useState("10");
 
   const loginHandler = (text) => setLogin(text);
   const emailHandler = (text) => setEmail(text);
@@ -26,7 +26,7 @@ export default function App() {
   useEffect(() => { }, [])
 
   const onLogin = () => {
-    Alert.alert("Credentials", `${login} + ${email}  + ${password}`);
+    Alert.alert("Credentials", `${login} + ${email} + ${password}`);
   };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -52,25 +52,25 @@ export default function App() {
                   behavior={Platform.OS == "ios" ? "padding" : "height"}
                 >
                   <View>
-                    <Text style={styles.textTitle}>Registration</Text>
+                    <Text style={styles.textTitle}>Реєстрація</Text>
                   </View>
                   <View>
                     <TextInput
-                      placeholder="Login"
+                      placeholder="Логін"
                       style={styles.input}
                       onChangeText={loginHandler}
                     />
                   </View>
                   <View>
                     <TextInput
-                      placeholder="Email"
+                      placeholder="Адреса електронної пошти"
                       style={styles.input}
                       onChangeText={emailHandler}
                     />
                   </View>
                   <View>
                     <TextInput
-                      placeholder="Password"
+                      placeholder="Пароль"
                       style={styles.input}
                       onChangeText={passwordHandler}
                       secureTextEntry={true}
@@ -80,11 +80,11 @@ export default function App() {
                   onPress={onLogin}
                   activeOpacity={0.8} 
                   style={styles.btn}>
-                    <Text style={styles.btnRegister}>Register</Text>
+                    <Text style={styles.btnRegister}>Зареєстуватися</Text>
                   </TouchableOpacity>
                   <View>
                     <Text style={styles.textSingIn}>
-                      Already have an account? Sign in
+                    Вже є акаунт? Увійти
                     </Text>
                   </View>
                 </KeyboardAvoidingView>
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
   input: {
     padding: 16,
     backgroundColor: '#f6f6f6',
-    border: '#E8E8E8',
+    borderColor: '#f6f6f6',
     borderWidth: 1,
     height: 50,
     marginBottom: 40,
@@ -168,6 +168,6 @@ const styles = StyleSheet.create({
   textSingIn: {
     fontSize: 16,
     textAlign: 'center',
-    marginBottom: 78,
+    marginBottom: 40,
   },
 });
