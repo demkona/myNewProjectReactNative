@@ -15,15 +15,15 @@ import {
 } from "react-native";
 
 export default function App() {
-  const [login, setLogin] = useState("10");
-  const [email, setEmail] = useState("10");
-  const [password, setPassword] = useState("10");
+  const [login, setLogin] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const loginHandler = (text) => setLogin(text);
   const emailHandler = (text) => setEmail(text);
   const passwordHandler = (text) => setPassword(text);
 
-  useEffect(() => { }, [])
+  useEffect(() => {}, []);
 
   const onLogin = () => {
     Alert.alert("Credentials", `${login} + ${email} + ${password}`);
@@ -36,14 +36,12 @@ export default function App() {
           source={require("./assets/Photo-BG.png")}
         >
           <View style={styles.imageBg}>
-            <ImageBackground
-              source={require("./assets/BG.png")}
-            >
+            <ImageBackground source={require("./assets/BG.png")}>
               <View style={styles.imageBgFon}>
                 <View style={styles.bgImgUser}>
                   <Image
                     style={styles.imgAdd}
-                    source={require('./assets/add.png')}
+                    source={require("./assets/add.png")}
                   />
                 </View>
               </View>
@@ -77,17 +75,16 @@ export default function App() {
                     />
                   </View>
                 </KeyboardAvoidingView>
-                  <TouchableOpacity 
+                <TouchableOpacity
                   onPress={onLogin}
-                  activeOpacity={0.8} 
-                  style={styles.btn}>
-                    <Text style={styles.btnRegister}>Зареєстуватися</Text>
-                  </TouchableOpacity>
-                  <View>
-                    <Text style={styles.textSingIn}>
-                    Вже є акаунт? Увійти
-                    </Text>
-                  </View>
+                  activeOpacity={0.8}
+                  style={styles.btn}
+                >
+                  <Text style={styles.btnRegister}>Зареєстуватися</Text>
+                </TouchableOpacity>
+                <View>
+                  <Text style={styles.textSingIn}>Вже є акаунт? Увійти</Text>
+                </View>
               </View>
             </ImageBackground>
           </View>
@@ -108,25 +105,25 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   imageBg: {
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end",
     flex: 1,
     borderRadius: 25,
   },
   imageBgFon: {
-    position: 'absolute',
-    left: '50%',
+    position: "absolute",
+    left: "50%",
     top: -60,
   },
   bgImgUser: {
-    right: '50%',
+    right: "50%",
     width: 120,
     height: 120,
-    textAlign: 'center',
+    textAlign: "center",
     backgroundColor: "#F6F6F6",
     borderRadius: 25,
   },
   imgAdd: {
-    position: 'absolute',
+    position: "absolute",
     right: -12,
     bottom: 14,
   },
@@ -134,13 +131,13 @@ const styles = StyleSheet.create({
     marginTop: 92,
     marginBottom: 33,
     fontSize: 30,
-    textAlign: 'center',
-    color: 'black',
+    textAlign: "center",
+    color: "black",
   },
   input: {
     padding: 16,
-    backgroundColor: '#f6f6f6',
-    borderColor: '#f6f6f6',
+    backgroundColor: "#f6f6f6",
+    borderColor: "#f6f6f6",
     borderWidth: 1,
     height: 50,
     marginBottom: 40,
@@ -167,7 +164,7 @@ const styles = StyleSheet.create({
   },
   textSingIn: {
     fontSize: 16,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: 40,
   },
 });
